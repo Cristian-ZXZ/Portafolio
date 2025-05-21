@@ -17,6 +17,14 @@ h1 {
     margin-bottom: 40px;
 }
 
+.button-row {
+    display: flex;             /* ¡Esto es lo que los pone en fila! */
+    justify-content: center;
+    align-items: center;
+    gap: 60px;                 /* espacio entre botones */
+    flex-wrap: wrap;
+}
+
 .button-link {
     text-decoration: none;
 }
@@ -25,12 +33,11 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
 }
 
 .icon-large {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     margin-bottom: 15px;
 }
 
@@ -42,7 +49,7 @@ h1 {
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    box-shadow: 0 50px 200px gold;
+    box-shadow: 0 20px 80px gold;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
@@ -50,4 +57,3 @@ h1 {
     box-shadow: 0 10px 20px rgba(255, 0, 102, 0.5);
     transform: translateY(-3px);
 }
-
