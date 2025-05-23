@@ -1,59 +1,308 @@
+:root {
+  --soft-green: #09dc84;
+  --black: #000000;
+  --white: #ffffff;
+  --font-montserrat: "Montserrat";
+  --font-poetsen-one: "Poetsen One";
+}
+
+/* INITIAL STYLES */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-montserrat);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #2d3838;
-    font-family: Arial, sans-serif;
+  background-color: rgb(0, 0, 0);
 }
 
-.content {
-    text-align: center;
+section {
+  padding: 120px 0;
 }
 
-h1 {
-    color: white;
-    margin-bottom: 40px;
+textarea {
+  resize: none;
 }
 
-.button-row {
-    display: flex;             /* ¡Esto es lo que los pone en fila! */
-    justify-content: center;
-    align-items: center;
-    gap: 60px;                 /* espacio entre botones */
-    flex-wrap: wrap;
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-.button-link {
-    text-decoration: none;
+/* NAV STYLES */
+
+.header {
+  color: var(--black);
+  width: 100%;
+  padding: 80px 0 0 0;
 }
 
-.button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.navbar {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  margin: 0 auto;
+  background-color: var(--soft-green);
+  z-index: 99;
+  border: "1";
+
+  border-bottom: 1px solid var(--white);
 }
 
-.icon-large {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 15px;
+.nav__logo .nav__logo--text {
+  font-family: var(--font-poetsen-one);
+  font-size: clamp(16px, 2vw, 22px);
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 6px var(--soft-green);
 }
 
-.button {
-    padding: 15px 30px;
-    font-size: 16px;
-    color: white;
-    background: linear-gradient(90deg, #cc01ff, #ff15c5);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 20px 80px gold;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+#hamburguer__menu {
+  font-size: 40px;
+  color: var(--black);
+  cursor: pointer;
+  display: none;
 }
 
-.button:hover {
-    box-shadow: 0 10px 20px rgba(255, 0, 102, 0.5);
-    transform: translateY(-3px);
+.nav__links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav__links li {
+  position: relative;
+}
+
+.nav__links li::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--soft-green);
+  border-radius: .7rem;
+
+  transition: 300ms ease;
+}
+
+.nav__links li:hover::before {
+  width: 100%;
+}
+
+.nav__links > li a {
+  color: var(--black);
+  text-decoration: none;
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 600;
+}
+
+/* -- ABOUT ME STYLES -- */
+.about__me {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about__me--texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about__me--title {
+  font-size: clamp(30px, 7vw, 60px);
+}
+
+.about__me--title span {
+  color: var(--soft-green);
+  letter-spacing: .2rem;
+}
+
+.about__me--description {
+  color: var(--white);
+  width: 90%;
+  font-size: clamp(18px, 3vw, 22px);
+  margin: 3rem 0;
+  line-height: 1.4;
+}
+
+.about__me--description span {
+  color: var(--soft-green);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.about__me .about__me--image img {
+  text-align: left;
+  display: block;
+  width: 300px;
+  height: 370px;
+  filter: drop-shadow(6px 6px 6px var(--soft-green));
+  transform: scale(1.1);
+  border-radius: 1000px;
+
+  animation-name: floating;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-direction: alternate;
+}
+
+@keyframes floating {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(10px);
+  }
+}
+
+.about__me--button {
+  background-color: var(--soft-green);
+  color: var(--soft-green);
+  display: inline-block;
+  padding: 1rem 5rem;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+  border-radius: .7rem;
+  cursor: pointer;
+  font-family: var(--font-montserrat);
+
+  transition: 300ms ease;
+}
+
+.about__me--button:hover {
+  color: var(--soft-green);
+  background-color: var(--black);
+}
+
+/* -- PROJECTS STYLES -- */
+.projects {
+  color: var(--black);
+  display: grid;
+  place-items: center;
+}
+
+.projects .projects__texts {
+  width: 90%;
+  text-align: center;
+}
+
+.projects__texts .projects__title {
+  font-size: clamp(25px, 7vw, 50px);
+  padding-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.projects__title::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  height: 3px;
+  width: 150px;
+  background-color: var(--soft-green);
+  transform: translateX(-50%);
+  border-radius: .2rem;
+}
+
+.projects__texts .projects__description {
+  color: var(--white);
+  font-size: clamp(18px, 4vw, 22px);
+  margin: 2rem 0;
+  line-height: 1.5;
+}
+
+.projects__description a {
+  text-decoration: none;
+  color: var(--soft-green);
+}
+
+.container__projects {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-auto-rows: auto;
+  gap: 1.5rem;
+  place-items: center;
+}
+
+.container__projects .box {
+  height: 600px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 1px solid var(--white);
+  border-radius: .3rem;
+}
+
+.box img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.box .title {
+  font-size: 25px;
+  color: var(--soft-green);
+}
+
+.box .description {
+  line-height: 1.4;
+  color: var(--white);
+}
+
+.box .button {
+  background-color: transparent;
+  color: var(--soft-green);
+  display: inline-block;
+  padding: 15px 25px;
+  place-self: start;
+  font-size: 20px;
+  border: 2px solid var(--soft-green);
+  border-radius: .5rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  transition: 400ms ease;
+}
+
+.box .button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--soft-green);
+  z-index: -1;
+
+  transition: 400ms ease;
+}
+
+.box .button:hover {
+  color: var(--soft-green);
+} 
+
+.box .button:hover::before {
+  width: 100%;
 }

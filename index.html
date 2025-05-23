@@ -1,30 +1,75 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Portafolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Portfolio | CCC</title>
 </head>
 <body>
-    <div class="content">
-        <h1>Mi Portafolio</h1>
+  <header class="header">
+    <nav class="navbar container">  
+        <h2 class="nav__logo--text">
+         Cristian Chaverra Colorado
+        </h2>
+      <i class="bi bi-list" id="hamburguer__menu"></i>
+      <ul class="nav__links">
+        <li class="nav__link"><a href="#projects">Mis proyectos</a></li> 
+      </ul>
+    </nav>
 
-        <div class="button-row">
-            <a href="https://cristian-zxz.github.io/modulo-2/" class="button-link">
-                <div class="button-container">
-                    <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Hoja de vida" class="icon-large">
-                    <button class="button">Hoja de vida</button>
-                </div>
-            </a>
+    <section class="about__me container" id="about__me">
+      <div class="about__me--texts">
+        <h1 class="about__me--title">
+          <span>Mi portafolio</span>
+        </h1>
+        <p class="about__me--description">
+          Hola!, mi nombre es <span>Cristian Chaverra Colorado</span> y soy desarrollador de software junior,
+          me gusta el mundo de la tecnologia y busco complementar mis Habilidades, actualmente estoy enfocado en el desarrollo web con tecnologias como HTML, CSS y JS.
+        </p>
+      </div>
+      <div class="about__me--image centered-image">
+        <img src="yo.jpeg" alt="Cristian CC">
+      </div>
+    </section>
+  </header>
 
-            <a href="https://moodle.riwi.io/" class="button-link">
-                <div class="button-container">
-                    <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Semana 1" class="icon-large">
-                    <button class="button">Semana 1</button>
-                </div>
-            </a>
-        </div>
+  <section class="projects container" id="projects">
+    <div class="projects__texts">
+      <h2 class="projects__title">Proyectos recientes</h2>
+      <p class="projects__description">
+        A continuacion te mostrare algunos de los proyectos mas recientes que he desarrollado
+        usando las tecnologias HTML y CSS.
+      </p>
     </div>
+
+    <div class="container__projects">
+      <div class="first__project box">
+        <img src="imghoja.png" alt="Imagen Web Diseño">
+        <h3 class="first__project--title title">Hoja de vida</h3>
+        <p class="first__project--description description">
+          Este sitio dirige al proyecto de hoja de vida
+        </p>
+        <a href="https://cristian-zxz.github.io/modulo-2/">
+          <button class="first__project--button button">
+            Ver proyecto  <i class="bi bi-arrow-right"></i>
+          </button>
+        </a>
+      </div>
+
+      <div class="second__project box">
+        <img src="S1.png" alt="Imagen Web de mascotas">
+        <h3 class="second__project--title title">Semana 1</h3>
+        <p class="second__project--description description">
+          Este sitio dirige al proyecto de la semana 1
+        </p>
+        <a href="https://cristian-zxz.github.io/M2S1/">
+          <button class="second__project--button button">
+            Ver proyecto <i class="bi bi-arrow-right"></i>
+          </button>
+        </a>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
